@@ -14,8 +14,8 @@
 
 ```
 ├── codes/                 # Scripts Python pour la détection et le streaming
-│   ├── detect_live_pose_roi_lips_dual.py
-│   └── ...
+│   ├── sivarf.py
+│   └── multisocket.py
 ├── models/                # Modèles YOLO pré-entraînés (.pt et .onnx)
 │   ├── best (10).pt
 │   ├── yolo11n.onnx
@@ -93,10 +93,5 @@ flutter run
 4. Pushez sur votre branche (`git push origin feature/VotreFonctionnalité`)
 5. Ouvrez une Pull Request
 
-## Licence
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
-
----
-
-*Développé par Rostom Ben-Abdallah & contributeurs*
+*Développé par Rostom Ben-Abdallah & alya hamrouni  & mohamed mtibaa  & Rasem Bali*
