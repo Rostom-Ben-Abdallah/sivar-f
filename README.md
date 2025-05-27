@@ -81,7 +81,7 @@ flutter run
 
 ## Configuration
 
-* Modifiez les **indices caméra** et la **résolution d’affichage** dans `detect_live_pose_roi_lips_dual.py`
+* Modifiez les **indices caméra** et la **résolution d’affichage** dans `sivarf.py`
 * Ajustez les **seuils de confiance** dans le dictionnaire `CONF_THRESH`
 * Définissez l’**URL WebSocket** dans `safevision_ar/lib/main.dart`
 
