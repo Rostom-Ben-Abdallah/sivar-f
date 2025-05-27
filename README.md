@@ -61,7 +61,7 @@ flutter pub get
 ### 1. Lancer le serveur CV Python
 
 ```bash
-python detect_live_pose_roi_lips_dual.py
+sivarf.py
 ```
 
 * Ouvre deux flux caméra (indices 1 et 3 par défaut)
