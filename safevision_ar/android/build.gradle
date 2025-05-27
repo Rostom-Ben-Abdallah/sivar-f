@@ -1,0 +1,47 @@
+// ─── Load Flutter version code and name from local.properties ─────────────
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode') ?: '1'
+def flutterVersionName = localProperties.getProperty('flutter.versionName') ?: '1.0'
+
+// ─── Gradle buildscript ───────────────────────────────────────────────────
+buildscript {
+    ext.kotlin_version = '1.9.22'
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+// ─── Repositories for all projects ────────────────────────────────────────
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// ─── Custom build folder structure for Flutter ────────────────────────────
+rootProject.buildDir = '../build'
+
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+    project.evaluationDependsOn(':app')
+}
+
+// ─── Clean task ───────────────────────────────────────────────────────────
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

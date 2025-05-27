@@ -1,0 +1,40 @@
+name: safevision_ar
+description: Mobile AR front-end for SafeVision alerts
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.13.6
+  # AR view
+  ar_flutter_plugin_updated: ^0.0.1
+
+  # Networking
+  web_socket_channel: ^2.4.0
+
+  # Math helpers
+  vector_math: ^2.1.4
+
+  # Haptics & audio
+
+  audioplayers: ^5.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/audio/beep-04.mp3
+    - assets/ss/cigarette.glb
+    - assets/ss/falling.glb
+    - assets/ss/scene.gltf
+    - assets/ss/phoenix_bird.glb
+    - assets/ss/location_01.glb
