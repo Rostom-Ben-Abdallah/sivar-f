@@ -14,6 +14,10 @@ This recognition is especially meaningful for the project because the challenge 
 
 [View the research portfolio and award section](https://rostom-ben-abdallah.github.io/#award)
 
+### Official certificate
+
+[![DIGILOG certificate — Rostom Ben Abdallah, second place in the Process Optimization Challenge](https://github.com/user-attachments/assets/d5e3b550-bbe9-4639-b5ea-5c1748143e43)](https://github.com/user-attachments/assets/d5e3b550-bbe9-4639-b5ea-5c1748143e43)
+
 ## Demo
 
 The video below shows the SafeVision prototype in operation and serves as a compact end-to-end demonstration of the project.
