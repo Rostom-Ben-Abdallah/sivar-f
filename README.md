@@ -4,6 +4,16 @@ A real-time **computer vision and augmented-reality safety monitoring prototype*
 
 The project explores how visual AI can turn continuous camera streams into structured safety alerts that are easier for an operator to understand and act on.
 
+## Recognition
+
+🏆 **2nd Place — DIGILOG Process Optimization Challenge (May 2025)**
+
+The **SIVAR / SafeVision project** earned second place in the DIGILOG Process Optimization Challenge held at ENET’Com Sfax from **23–27 May 2025**. The official certificate lists the challenge as organized by **ENET’Com (Tunisia), Leipzig University (Germany), and KNUST (Ghana)**, with DAAD/BMZ support.
+
+This recognition is especially meaningful for the project because the challenge evaluated a complete applied solution rather than an isolated model: visual perception, event reasoning, real-time system integration and operator-facing delivery all had to work together.
+
+[View the research portfolio and award section](https://rostom-ben-abdallah.github.io/#award)
+
 ## Demo
 
 The video below shows the SafeVision prototype in operation and serves as a compact end-to-end demonstration of the project.
