@@ -1,97 +1,68 @@
-# SafeVision AR - Alertes de Sécurité en Temps Réel avec RA
+# SafeVision AR — Multi-Camera Computer Vision Safety Monitoring
 
-**SafeVision AR** est une solution complète de surveillance de sécurité en temps réel utilisant la vision par ordinateur et la réalité augmentée. Le système capture les flux vidéo de plusieurs caméras, détecte les objets dangereux ou abandonnés et les comportements à risque, puis diffuse des alertes vers une application Flutter en AR pour une visualisation intuitive.
+A real-time **computer vision and augmented-reality safety monitoring prototype** combining multi-camera video analysis, YOLO-based detection/tracking, pose analysis, event reasoning and a Flutter AR client.
 
-## Fonctionnalités
+The project explores how visual AI can turn continuous camera streams into structured safety alerts that are easier for an operator to understand and act on.
 
-* **Support multi-caméras** : traitement parallèle de deux flux vidéo (ou plus)
-* **Détection et suivi d’objets** : modèles YOLO pour les cigarettes, couteaux, valises, sacs à dos
-* **Analyse de comportements** : détection de chute et alertes de tabagisme basées sur l’analyse de la pose et du maillage des lèvres
-* **Réalité augmentée** : client Flutter AR affichant les alertes superposées dans le monde réel
-* **Streaming WebSocket** : envoi d’alertes JSON et de trames encodées en base64 à faible latence
+## Computer vision scope
 
-## Structure du projet
+- multi-camera video processing
+- YOLO object detection and tracking
+- pose-based fall detection
+- fine-grained smoking-event reasoning using cigarette detection + face/lip geometry
+- unattended-object / luggage alerts
+- temporal event logic and track IDs
+- real-time visualization and alert streaming
+- AR overlays for operator-facing situational awareness
 
-```
-├── codes/                 # Scripts Python pour la détection et le streaming
-│   ├── sivarf.py
-│   └── multisocket.py
-├── models/                # Modèles YOLO pré-entraînés (.pt et .onnx)
-│   ├── best (10).pt
-│   ├── yolo11n.onnx
-│   └── yolo11n-pose.onnx
-├── safevision_ar/         # Application Flutter AR
-│   ├── lib/
-│   ├── assets/
-│   └── pubspec.yaml
-├── .gitattributes         # Attributs Git
-└── README.md              # Documentation du projet
-```
+## High-level architecture
 
-## Prérequis
-
-* **Python 3.9+** avec :
-
-  * OpenCV
-  * NumPy
-  * MediaPipe
-  * Ultralytics YOLO
-  * ONNX Runtime (ou onnxruntime-gpu)
-* **Flutter SDK** 3.x
-* Appareil Android/iOS compatible ARCore/ARKit
-
-## Installation
-
-### 1. Environnement Python
-
-```bash
-cd codes
-pip install -r requirements.txt
+```text
+Camera streams
+     |
+     v
+YOLO detection / tracking
+     |
+     +------> object-risk reasoning
+     |
+     +------> pose estimation -> fall analysis
+     |
+     +------> face / lip geometry -> smoking-event reasoning
+     |
+     v
+Structured safety events
+     |
+     v
+WebSocket transport
+     |
+     v
+Flutter / AR visualization client
 ```
 
-### 2. Application Flutter
+## Why this project is relevant to my CV work
 
-```bash
-cd safevision_ar
-flutter pub get
+This project combines several themes that also appear in my later research and industrial work: **detection, tracking, temporal reasoning, pose analysis, multi-camera processing, event classification and real-time deployment**.
+
+It is especially useful as a public example of how I connect computer-vision models to a complete application rather than treating inference as an isolated step.
+
+## Technologies
+
+`Python` · `OpenCV` · `Ultralytics YOLO` · `MediaPipe` · `ONNX Runtime` · `BoT-SORT` · `WebSockets` · `Flutter` · `AR`
+
+## Repository layout
+
+```text
+├── codes/           # Python computer-vision and alert-streaming prototypes
+├── models/          # model artifacts used by the prototype
+└── safevision_ar/   # Flutter / AR client
 ```
 
-## Utilisation
+## Portfolio note
 
-### 1. Lancer le serveur CV Python
+This repository is an academic/team prototype and contains iterative experimental code. It should be read as an engineering demonstration of multi-camera visual perception and event reasoning rather than as a polished production release.
 
-```bash
-sivarf.py
-```
+For my current research direction, see my [computer-vision portfolio](https://github.com/Rostom-Ben-Abdallah) and the [animal behaviour vision case study](https://github.com/Rostom-Ben-Abdallah/Rostom-Ben-Abdallah/blob/main/portfolio/mitacs-animal-behavior-vision.md).
 
-* Ouvre deux flux caméra (indices 1 et 3 par défaut)
-* Exécute la détection, l’annotation et le suivi
-* Stream d’alertes JSON et de trames base64 via WebSocket sur le port 8765
+## Contributors
 
-### 2. Démarrer le client Flutter AR
-
-```bash
-cd safevision_ar
-flutter run
-```
-
-* Se connecte à `ws://<adresse-serveur>:8765`
-* Reçoit les flux et alertes
-* Affiche des overlays AR (icônes, messages) ancrés sur les objets/personnes détectés
-
-## Configuration
-
-* Modifiez les **indices caméra** et la **résolution d’affichage** dans `sivarf.py`
-* Ajustez les **seuils de confiance** dans le dictionnaire `CONF_THRESH`
-* Définissez l’**URL WebSocket** dans `safevision_ar/lib/main.dart`
-
-## Contribuer
-
-1. Forkez le dépôt
-2. Créez une branche de fonctionnalité (`git checkout -b feature/VotreFonctionnalité`)
-3. Commitez vos modifications (`git commit -m "Ajout de ma fonctionnalité"`)
-4. Pushez sur votre branche (`git push origin feature/VotreFonctionnalité`)
-5. Ouvrez une Pull Request
-
-
-*Développé par Rostom Ben-Abdallah & alya hamrouni  & mohamed mtibaa  & Rasem Bali*
+Developed by **Rostom Ben Abdallah**, Alya Hamrouni, Mohamed Mtibaa and Rasem Bali.
