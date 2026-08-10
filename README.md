@@ -4,6 +4,12 @@ A real-time **computer vision and augmented-reality safety monitoring prototype*
 
 The project explores how visual AI can turn continuous camera streams into structured safety alerts that are easier for an operator to understand and act on.
 
+## Demo
+
+The video below shows the SafeVision prototype in operation and serves as a compact end-to-end demonstration of the project.
+
+https://github.com/user-attachments/assets/1d871f73-b5b0-446e-bc65-86a07baaf2be
+
 ## Computer vision scope
 
 - multi-camera video processing
